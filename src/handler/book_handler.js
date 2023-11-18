@@ -57,10 +57,18 @@ export const addBook = (req, h) => {
 };
 
 export const getAllBooks = (req, h) => {
+  const filtered = books.map(el => {
+    return {
+      id: el.id,
+      name: el.name,
+      publisher: el.publisher
+    };
+  });
+
   return h.response({
     status: 'success',
     data: {
-      books: books,
+      books: filtered,
     },
   }).code(200);
 }
