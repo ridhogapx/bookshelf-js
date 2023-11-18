@@ -59,7 +59,9 @@ export const addBook = (req, h) => {
 export const getAllBooks = (req, h) => {
   return h.response({
     status: 'success',
-    data: books,
+    data: {
+      books: books,
+    },
   }).code(200);
 }
 
