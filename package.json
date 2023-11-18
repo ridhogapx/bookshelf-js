@@ -1,7 +1,7 @@
 {
   "name": "bookshelf-api",
   "version": "1.0.0",
-  "type" : "module",
+  "type": "module",
   "description": "Dicoding submission",
   "main": "./src/server.js",
   "scripts": {
@@ -25,5 +25,8 @@
   "dependencies": {
     "@hapi/hapi": "^21.3.2",
     "nanoid": "^5.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
