@@ -1,6 +1,7 @@
 {
   "name": "bookshelf-api",
   "version": "1.0.0",
+  "type" : "module",
   "description": "Dicoding submission",
   "main": "index.js",
   "scripts": {
