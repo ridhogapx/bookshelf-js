@@ -86,4 +86,9 @@ export const getBookById = (req, h) => {
       },
     }).code(200);
  }
+
+  return h.response({
+    status: 'fail',
+    message: 'Buku tidak ditemukan'
+  }).code(404);
 };
