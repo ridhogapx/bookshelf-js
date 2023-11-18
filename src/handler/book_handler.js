@@ -100,11 +100,11 @@ export const updateBook = (req, h) => {
           summary, publisher, pageCount,
           readPage, reading } = req.payload;
   
-  const i = books.findIndex((n) => n.id === n.id);
+  const i = books.findIndex((n) => n.id === bookId);
 
   const updatedAt = new Date().toISOString();
 
-  if (name = '' || name == undefined) {
+  if (name === '' || name === undefined) {
     return h.response({
       status: 'fail',
       message: 'Gagal memperbarui buku. Mohon isi nama buku',
@@ -118,7 +118,7 @@ export const updateBook = (req, h) => {
     }).code(400);
   }
 
-  if (i == -1) {
+  if (i === -1) {
     return h.response({
       status: 'fail',
       message: 'Gagal memperbarui buku. Id tidak ditemukan',
