@@ -143,3 +143,22 @@ export const updateBook = (req, h) => {
     message: 'Buku berhasil diperbarui',
   }).code(200);
 }
+
+export const deleteBook = (req, h) => {
+  const { bookId } = req.params;
+  const i = books.findIndex((n) => n.id === bookId);
+
+  if ( i === -1) {
+    return h.response({
+      status: 'fail',
+      message: 'Buku gagal dihapus. Id ditemukan',
+    }).code(404);
+  }
+
+  books.splice(i, 1);
+  
+  return h.response({
+    status: 'success',
+    message: 'Buku berhasil dihapus',
+  });
+}
