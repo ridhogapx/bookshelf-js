@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/RageNeko26/bookshelf-js/issues"
   },
-  "homepage": "https://github.com/RageNeko26/bookshelf-js#readme"
+  "homepage": "https://github.com/RageNeko26/bookshelf-js#readme",
+  "dependencies": {
+    "@hapi/hapi": "^21.3.2",
+    "nanoid": "^5.0.3"
+  }
 }
