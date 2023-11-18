@@ -40,7 +40,7 @@ export const addBook = (req, h) => {
   if (readPage > pageCount) {
     return h.response({
       status: 'fail',
-      message: 'Gagal menambahkan buku. readPage tidak boleh boleh lebih besar dari pageCount' 
+      message: 'Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount' 
     }).code(400);
   }
 
