@@ -52,13 +52,28 @@ export const addBook = (req, h) => {
     data: {
       bookId: newBook.id
     }
-  }).code(201)
+  }).code(201);
 
-}
+};
 
 export const getAllBooks = (req, h) => {
   return h.response({
     status: 'success',
     data: books,
-  }).code(200)
+  }).code(200);
 }
+
+export const getBookById = (req, h) => {
+  const { bookId } = req.params;
+
+ const book = books.filter((item) => item.id == bookId)[0];
+
+ if (book != undefined) {
+    return h.response({
+      status: 'success',
+      data: {
+          book: book,
+      },
+    }).code(200);
+ }
+};
