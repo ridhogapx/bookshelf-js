@@ -92,3 +92,54 @@ export const getBookById = (req, h) => {
     message: 'Buku tidak ditemukan'
   }).code(404);
 };
+
+export const updateBook = (req, h) => {
+  const { bookId } = req.params;
+
+  const { name, year, author,
+          summary, publisher, pageCount,
+          readPage, reading } = req.payload;
+  
+  const i = books.findIndex((n) => n.id === n.id);
+
+  const updatedAt = new Date().toISOString();
+
+  if (name = '' || name == undefined) {
+    return h.response({
+      status: 'fail',
+      message: 'Gagal memperbarui buku. Mohon isi nama buku',
+    }).code(400);
+  }
+
+  if ( readPage > pageCount) {
+    return h.response({
+      status: 'fail',
+      message: 'Gagal memperbarui buku. readPage tidak boleh lebih besar dari pageCount'
+    }).code(400);
+  }
+
+  if (i == -1) {
+    return h.response({
+      status: 'fail',
+      message: 'Gagal memperbarui buku. Id tidak ditemukan',
+    }).code(404);
+  }
+
+  books[i] = {
+    ...books[i],
+    name,
+    year,
+    author,
+    summary,
+    publisher,
+    pageCount,
+    readPage,
+    reading, 
+    updatedAt,
+  };
+
+  return h.response({
+    status: 'success',
+    message: 'Buku berhasil diperbarui',
+  }).code(200);
+}
