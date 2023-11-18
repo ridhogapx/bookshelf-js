@@ -13,6 +13,8 @@ export const addBook = (req, h) => {
     summary, publisher, pageCount, 
     readPage, reading, } = req.payload;
 
+  const createDate = new Date().toISOString();
+
   const newBook = {
     id: nanoid(16),
     name: name,
@@ -24,8 +26,8 @@ export const addBook = (req, h) => {
     readPage: readPage,
     reading: reading,
     finished: pageCount === readPage ? true : false,
-    insertedAt: new Date().toISOString(),
-    updatedAt: this.insertedAt,
+    insertedAt: createDate,
+    updatedAt: createDate,
   };
 
   if (name === '' || name === undefined) {
