@@ -55,3 +55,10 @@ export const addBook = (req, h) => {
   }).code(201)
 
 }
+
+export const getAllBooks = (req, h) => {
+  return h.response({
+    status: 'success',
+    data: books,
+  }).code(200)
+}
