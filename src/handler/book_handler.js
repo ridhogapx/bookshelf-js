@@ -151,7 +151,7 @@ export const deleteBook = (req, h) => {
   if ( i === -1) {
     return h.response({
       status: 'fail',
-      message: 'Buku gagal dihapus. Id ditemukan',
+      message: 'Buku gagal dihapus. Id tidak ditemukan',
     }).code(404);
   }
 
@@ -160,5 +160,5 @@ export const deleteBook = (req, h) => {
   return h.response({
     status: 'success',
     message: 'Buku berhasil dihapus',
-  });
+  })
 }
